@@ -1,0 +1,19 @@
+[project]
+name = "system_check"
+version = "0.1.0"
+description = "Utilities for checking the state of the hardware and software"
+authors = [{ name = "Anton Golovanov" }]
+dynamic = ["dependencies"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["system_check*"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
